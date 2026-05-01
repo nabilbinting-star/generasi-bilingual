@@ -1,0 +1,528 @@
+<?php
+/* =====================================================
+   GENERASI BILINGUAL
+   SUPER MAX EDITION
+   Simpan sebagai index.php
+===================================================== */
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generasi Bilingual</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+overflow-x:hidden;
+background:
+radial-gradient(circle at top left,#ffd9eb 0%,transparent 25%),
+radial-gradient(circle at bottom right,#d8f7ff 0%,transparent 25%),
+linear-gradient(135deg,#fffafd,#fffef8,#f7fcff);
+color:#1f1f1f;
+}
+
+/* NAVBAR */
+nav{
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(16px);
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+background:linear-gradient(135deg,#ff66b3,#7ddcff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:24px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+font-weight:700;
+font-size:15px;
+color:#555;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#ff4fa4;
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+padding:140px 7% 70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.left{
+flex:1;
+min-width:320px;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:50px;
+background:#fff;
+font-size:14px;
+font-weight:800;
+color:#ff4fa4;
+box-shadow:0 15px 25px rgba(0,0,0,.05);
+margin-bottom:24px;
+}
+
+.left h1{
+font-size:78px;
+line-height:1.03;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.left h1 span{
+background:linear-gradient(135deg,#ff72ba,#7fdcff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.left p{
+font-size:18px;
+line-height:1.9;
+color:#666;
+max-width:580px;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:800;
+transition:.3s;
+}
+
+.main-btn{
+background:linear-gradient(135deg,#ff72ba,#ff4fa4);
+color:#fff;
+box-shadow:0 20px 30px rgba(255,79,164,.22);
+}
+
+.main-btn:hover{
+transform:translateY(-6px);
+}
+
+.second-btn{
+background:#fff;
+color:#222;
+box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+/* RIGHT */
+.right{
+flex:1;
+min-width:320px;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.glass{
+position:absolute;
+width:520px;
+height:520px;
+border-radius:40% 60% 60% 40%;
+background:linear-gradient(135deg,#ffe5f3,#dff8ff);
+animation:rotate 14s linear infinite;
+}
+
+@keyframes rotate{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+.right img{
+width:88%;
+max-width:520px;
+position:relative;
+z-index:2;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
+}
+
+/* GENERAL */
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:54px;
+font-weight:800;
+margin-bottom:14px;
+}
+
+.desc{
+text-align:center;
+max-width:720px;
+margin:auto auto 45px;
+line-height:1.8;
+color:#777;
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.stat{
+background:#fff;
+padding:28px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 20px 35px rgba(0,0,0,.05);
+}
+
+.stat h3{
+font-size:42px;
+color:#ff4fa4;
+font-weight:800;
+margin-bottom:8px;
+}
+
+.stat p{
+color:#666;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+}
+
+.card{
+background:rgba(255,255,255,.94);
+padding:32px;
+border-radius:30px;
+box-shadow:0 20px 35px rgba(0,0,0,.05);
+transition:.35s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-12px);
+}
+
+.icon{
+font-size:52px;
+margin-bottom:16px;
+}
+
+.card h3{
+font-size:25px;
+color:#ff4fa4;
+margin-bottom:10px;
+font-weight:800;
+}
+
+.card p{
+color:#666;
+line-height:1.8;
+margin-bottom:18px;
+}
+
+.small-btn{
+display:inline-block;
+padding:12px 22px;
+background:#89dcff;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+font-weight:800;
+}
+
+/* CTA */
+.cta{
+width:90%;
+margin:0 auto 90px;
+padding:60px 30px;
+border-radius:36px;
+text-align:center;
+background:linear-gradient(135deg,#ff79be,#ff4fa4,#8ddfff);
+color:#fff;
+box-shadow:0 30px 45px rgba(0,0,0,.08);
+}
+
+.cta h2{
+font-size:48px;
+font-weight:800;
+margin-bottom:14px;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.cta a{
+display:inline-block;
+padding:16px 28px;
+background:#fff;
+color:#ff4fa4;
+text-decoration:none;
+border-radius:40px;
+font-weight:800;
+}
+
+/* FOOTER */
+footer{
+padding:35px;
+text-align:center;
+background:#fff;
+color:#777;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+nav{
+flex-direction:column;
+gap:14px;
+position:relative;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+padding-top:50px;
+text-align:center;
+flex-direction:column-reverse;
+}
+
+.left h1{
+font-size:48px;
+}
+
+.left p{
+margin:auto auto 25px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+.glass{
+width:320px;
+height:320px;
+}
+
+.title{
+font-size:36px;
+}
+
+.cta h2{
+font-size:32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Generasi Bilingual</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#fitur">Fitur</a></li>
+<li><a href="#kelas">Kelas</a></li>
+<li><a href="#produk">Produk</a></li>
+<li><a href="#kontak">Kontak</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+
+<div class="left">
+<div class="badge">Website Edukasi Masa Depan</div>
+
+<h1>Buat Anak Jadi <span>Bilingual</span> Sejak Dini</h1>
+
+<p>
+Belajar Bahasa Indonesia dan English dengan metode modern,
+desain lucu, interaktif, dan menyenangkan dari PAUD sampai SMA.
+</p>
+
+<div class="buttons">
+<a href="#kelas" class="btn main-btn">Mulai Belajar</a>
+<a href="#fitur" class="btn second-btn">Lihat Fitur</a>
+</div>
+</div>
+
+<div class="right">
+<div class="glass"></div>
+<img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png">
+</div>
+
+</section>
+
+<section>
+<h2 class="title">Kenapa Pilih Kami</h2>
+<p class="desc">Platform modern untuk generasi masa depan.</p>
+
+<div class="stats">
+<div class="stat">
+<h3>5+</h3>
+<p>Tingkatan Kelas</p>
+</div>
+
+<div class="stat">
+<h3>100+</h3>
+<p>Materi Belajar</p>
+</div>
+
+<div class="stat">
+<h3>50+</h3>
+<p>Kuis Interaktif</p>
+</div>
+
+<div class="stat">
+<h3>24/7</h3>
+<p>Akses Online</p>
+</div>
+</div>
+</section>
+
+<section id="fitur">
+<h2 class="title">Fitur Premium</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📚</div>
+<h3>Materi Lengkap</h3>
+<p>Dari PAUD sampai SMA sesuai usia.</p>
+<a href="#" class="small-btn">Masuk</a>
+</div>
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>Latihan Soal</h3>
+<p>Nilai otomatis dan mudah digunakan.</p>
+<a href="#" class="small-btn">Masuk</a>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Kuis Menarik</h3>
+<p>Belajar sambil bermain.</p>
+<a href="#" class="small-btn">Masuk</a>
+</div>
+
+<div class="card">
+<div class="icon">🎥</div>
+<h3>Video Belajar</h3>
+<p>Visual interaktif dan seru.</p>
+<a href="#" class="small-btn">Masuk</a>
+</div>
+
+</div>
+</section>
+
+<section id="kelas">
+<h2 class="title">Pilihan Tingkatan</h2>
+
+<div class="grid">
+
+<div class="card"><div class="icon">🧸</div><h3>PAUD</h3></div>
+<div class="card"><div class="icon">🎈</div><h3>TK</h3></div>
+<div class="card"><div class="icon">📘</div><h3>SD</h3></div>
+<div class="card"><div class="icon">📗</div><h3>SMP</h3></div>
+<div class="card"><div class="icon">🎓</div><h3>SMA</h3></div>
+
+</div>
+</section>
+
+<section id="produk">
+<h2 class="title">Produk Edukasi</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📕</div>
+<h3>Buku Hardcopy</h3>
+<p>Buku cetak bilingual berkualitas.</p>
+<a href="#" class="small-btn">Beli</a>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Digital Product</h3>
+<p>Ebook, worksheet, dan PDF.</p>
+<a href="#" class="small-btn">Beli</a>
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+<h2>Mulai Perjalanan Anak Hebat</h2>
+<p>Gabung sekarang dan bangun generasi bilingual terbaik.</p>
+<a href="#">Daftar Sekarang</a>
+</section>
+
+<footer id="kontak">
+© 2026 Generasi Bilingual. Smart Kids Bright Future.
+</footer>
+
+</body>
+</html>
